@@ -1,0 +1,10 @@
+FROM docker.io/node:20
+
+COPY . .
+
+RUN npm install
+
+# Override with specific version
+RUN npm install axios@1.6.7
+
+CMD npm test
