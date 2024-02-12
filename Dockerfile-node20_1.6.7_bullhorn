@@ -1,10 +1,11 @@
 FROM docker.io/node:20
 
 COPY *.ts *.json .env .
+COPY lib ./lib
 
 RUN npm install
 
 # Override with specific version
 RUN npm install axios@1.6.7
 
-CMD npx jest axios.test
+CMD npx jest bullhorn.test
